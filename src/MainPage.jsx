@@ -32,6 +32,7 @@ const MainPage = (props) => {
                 <div className="city">
                     <img src={pinIcon} alt=""/>
                     <span className='city__name'>{props.nowWeather? props.nowWeather.name: "---"}</span>
+
                 </div>
                 <div className="main_loading">
                     <img src={preloaderIcon} alt=""/>
