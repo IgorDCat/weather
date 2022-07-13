@@ -1,0 +1,19 @@
+854bbfb87037263793eb4c4e98b2fc48
+
+
+https://tile.openweathermap.org/map/1/1/1/1.png?appid=854bbfb87037263793eb4c4e98b2fc48
+
+
+https://api.openweathermap.org/data/2.5/weather?lat=53.03&lon=158.66&appid=854bbfb87037263793eb4c4e98b2fc48&lang=ru   -сейчас
+
+api.openweathermap.org/data/2.5/forecast?lat=53.03&lon=158.66&appid=854bbfb87037263793eb4c4e98b2fc48		- 5дн
+
+
+http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=854bbfb87037263793eb4c4e98b2fc48
+
+
+&lang=ru
+
+http://api.openweathermap.org/geo/1.0/direct?q=petropavlovsk-kamchatsky&limit=1&appid=854bbfb87037263793eb4c4e98b2fc48
+
+москва 55.75, 37.62

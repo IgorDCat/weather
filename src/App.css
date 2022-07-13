@@ -1,38 +1,343 @@
-.App {
-  text-align: center;
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app {
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 375px;
+    border-radius: 15px;
+    background: linear-gradient(#06C7F1, #0648F1);
+    z-index: 10;
+    padding-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-self: flex-start;
+    padding: 25px 15px 0;
+}
+
+.header__temperature_icon {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.header__temperature_icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.header__menu_icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.city {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+}
+
+.city img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.main_loading {
+    visibility: hidden;
+    display: flex;
+    margin: 12px auto;
+    width: 94px;
+    height: 20px;
+    background: rgba(37, 32, 32, 0.6);
+    border-radius: 50px;
+    color: #5BF87D;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.main_loading img {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+}
+
+.main__content {
+    width: 300px;
+    margin: 0 auto 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px white solid;
+    padding-bottom: 12px;
+}
+
+.main__content img {
+    width: 180px;
+    height: 156px;
+}
+
+.main__temperature {
+    font-size: 100px;
+    font-weight: 500;
+    line-height: 117px;
+}
+
+.main__temperature span {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-top: 25px;
+}
+
+.main__description {
+    font-size: 27px;
+    font-weight: 500;
+    color: #FAFD74;
+    line-height: 35px;
+    text-align: center;
+}
+
+.main__date {
+    font-size: 12px;
+    line-height: 13px;
+    color: #E8E8E8;
+    font-weight: 600;
+}
+
+.main__parameters {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.main__parameters_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 86px;
+    margin: 0 8px;
+}
+
+.main__parameters_item img {
+    width: 25px;
+    height: 25px;
+}
+
+.main__parameters_text {
+    color: #E8E8E8;
+}
+
+.know_more {
+    display: flex;
+    margin: 0 auto;
+    width: 94px;
+    height: 20px;
+    background-color: #252020;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 14;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.bottom_container {
+    position: relative;
+    top: -30px;
+    margin: 0 auto;
+    width: 375px;
+    background-color: #252020;
+    font-size: 22px;
+    line-height: 29px;
+    padding: 38px 23px 0;
+    border-radius: 15px;
+    height: 210px;
+}
+
+.bottom__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.bottom__days-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    font-size: 14px;
+}
+
+.bottom__days-link img {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom__days-link:hover {
+    border: white 1px solid;
+}
+
+.bottom__widgets {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom__widget {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75px;
+    height: 100px;
+    border-radius: 30px;
+    background: #2352CB;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .3s;
+
+}
+
+.bottom__widget:hover {
+    background: linear-gradient(#0648F1, #00D1FF);
+    height: 110px;
+    top: -10px;
+}
+
+.bottom__widget img {
+    width: 45px;
+    height: 45px;
+}
+
+.week__title {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.week__title img {
+    width: 25px;
+    height: 25px;
+}
+
+.week__main {
+    display: flex;
+}
+
+.week__main_image img {
+    width: 115px;
+    height: 115px;
+    margin: 0 30px 10px 15px;
+}
+
+.week__main_details_title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.week__main_details_temperature {
+    font-size: 72px;
+    line-height: 67px;
+    font-weight: 500;
+}
+
+.week__main_details_temperature span {
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 400;
+}
+
+.week__main_details_description {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+.line {
+    width: 300px;
+    height: 1px;
+    background-color: #E8E8E8;
+    margin: 0 auto 7px;
+}
+
+.black {
+    background-color: #252020;
+    width: 375px;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+.week__content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.week__content_day, .week__content_description, .week__content_temperature{
+    margin: 17px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.week__content_description{
+    width: 200px;
+}
+
+.week__content_description img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.week__content_day{
+    font-size: 18px;
+    line-height: 24px;
+    width: 30px;
+}
+
+.newDay{
+    margin-left: 10px;
+    color: #FAFD74;
 }
