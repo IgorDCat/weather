@@ -17,3 +17,5 @@ http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=854bbfb87037
 http://api.openweathermap.org/geo/1.0/direct?q=petropavlovsk-kamchatsky&limit=1&appid=854bbfb87037263793eb4c4e98b2fc48
 
 москва 55.75, 37.62
+
+йошкар-ола 56.6, 47.88

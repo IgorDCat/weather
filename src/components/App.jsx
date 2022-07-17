@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import './App.css';
+import '../style/App.css';
 import {WeekWeather} from "./WeekWeather";
 import MainPage from "./MainPage";
 import {Route, Routes} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchHourlyWeather, fetchTodayWeather} from "./weatherReducer";
+import {fetchHourlyWeather, fetchNowWeather} from "../redux/weatherReducer";
 
 function App() {
     const lat = useSelector(state => state.weather.lat);
@@ -12,7 +12,7 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchTodayWeather(lat, lon, "en"));
+        dispatch(fetchNowWeather(lat, lon, "en"));
         dispatch(fetchHourlyWeather(lat, lon, "en"));
     }, [])
 

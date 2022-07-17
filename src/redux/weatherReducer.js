@@ -1,4 +1,4 @@
-import {api} from "./api";
+import {api} from "../api/api";
 
 const SET_HOURLY_WEATHER = "SET_HOURLY_WEATHER";
 const SET_NOW_WEATHER = "SET_NOW_WEATHER";
@@ -6,8 +6,8 @@ const SET_NOW_WEATHER = "SET_NOW_WEATHER";
 const initialState = {
     nowWeather: null,
     hourlyWeather: null,
-    lat: 53.03,
-    lon: 158.66
+    lat: 55.75,
+    lon: 37.62
 }
 
 
@@ -19,7 +19,7 @@ const setNowWeather = (nowWeather) => {
     return {type: SET_NOW_WEATHER, nowWeather: nowWeather};
 }
 
-export const fetchTodayWeather = (lat, lon, lang) => async (dispatch) => {
+export const fetchNowWeather = (lat, lon, lang) => async (dispatch) => {
     const response = await api.getNowWeather(lat, lon, lang);
     await dispatch(setNowWeather(response));
     //const response1 = await api.getCities("Moscow", 5);

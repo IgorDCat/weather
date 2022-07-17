@@ -1,12 +1,12 @@
 import React from "react";
-import menuIcon from "./assets/menu_icon.png"
-import pinIcon from "./assets/pin.png"
-import preloaderIcon from "./assets/preloader.png"
-import arrowImg from "./assets/arrow1.png"
+import menuIcon from "../assets/menu_icon.png"
+import pinIcon from "../assets/pin.png"
+import preloaderIcon from "../assets/preloader.png"
+import arrowImg from "../assets/arrow1.png"
 import WindHumidityRain from "./WindHumidityRain";
 import {NavLink} from "react-router-dom";
-import {selectImg} from "./selectImage";
-import {dateConverter} from "./dateConverter";
+import {selectImg} from "../utils/selectImage";
+import {dateConverter} from "../utils/dateConverter";
 
 
 const capitalizeFirstLetter = (string) => {

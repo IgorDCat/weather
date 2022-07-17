@@ -1,7 +1,7 @@
 import React from "react";
-import windImg from "./assets/wind.png"
-import humidityImg from "./assets/humidity.png"
-import chanceOfRainImg from "./assets/chance_of_rain.png"
+import windImg from "../assets/wind.png"
+import humidityImg from "../assets/humidity.png"
+import chanceOfRainImg from "../assets/chance_of_rain.png"
 
 const WindHumidityRain = (props) => {
     return (

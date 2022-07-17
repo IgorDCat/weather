@@ -1,12 +1,12 @@
 import React from "react";
-import backArrowIcon from "./assets/back_arrow.png";
-import menuIcon from "./assets/menu_icon.png";
-import calendarIcon from "./assets/calendar_icon.png";
-import weatherImg from "./assets/weather_img.png"
+import backArrowIcon from "../assets/back_arrow.png";
+import menuIcon from "../assets/menu_icon.png";
+import calendarIcon from "../assets/calendar_icon.png";
+import weatherImg from "../assets/weather_img.png"
 import WindHumidityRain from "./WindHumidityRain";
 import {NavLink} from "react-router-dom";
-import {dateConverter, getNewDate} from "./dateConverter";
-import {selectImg} from "./selectImage";
+import {dateConverter, getNewDate} from "../utils/dateConverter";
+import {selectImg} from "../utils/selectImage";
 
 export const WeekWeather = (props) => {
     return (
