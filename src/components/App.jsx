@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchHourlyWeather, fetchNowWeather} from "../redux/weatherReducer";
 
 function App() {
+    const cities = useSelector(state => state.weather.cities)
     const lat = useSelector(state => state.weather.lat);
     const lon = useSelector(state => state.weather.lon);
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function App() {
     useEffect(() => {
         dispatch(fetchNowWeather(lat, lon, "en"));
         dispatch(fetchHourlyWeather(lat, lon, "en"));
-    }, [])
+    }, [lon])
 
     const nowWeather = useSelector(state => state.weather.nowWeather);
     const hourlyWeather = useSelector(state => state.weather.hourlyWeather);
@@ -22,7 +23,8 @@ function App() {
 
     return (
         <Routes>
-            <Route path='' element={<MainPage nowWeather={nowWeather} hourlyWeather={hourlyWeather} date={date}/>}/>
+            <Route path='' element={<MainPage nowWeather={nowWeather} hourlyWeather={hourlyWeather} date={date}
+                                              cities={cities}/>}/>
             <Route path='/week' element={<WeekWeather hourlyWeather={hourlyWeather} nowWeather={nowWeather}/>}/>
         </Routes>
     );

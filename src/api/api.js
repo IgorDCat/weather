@@ -2,9 +2,7 @@ import * as axios from "axios";
 
 
 const instance = axios.default.create({
-    //withCredentials: true,
-    baseURL: 'https://api.openweathermap.org/',
-    //   headers: {'API-KEY': '854bbfb87037263793eb4c4e98b2fc48'}
+    baseURL: 'https://api.openweathermap.org/'
 });
 
 export const api = {
@@ -22,7 +20,7 @@ export const api = {
         })
     },
 
-    getCities: (city, limit=5) => {
+    getCities: (city, limit) => {
         return instance.get(`geo/1.0/direct?q=${city}&limit=${limit}&appid=854bbfb87037263793eb4c4e98b2fc48`).then(response => {
                         console.log(response.data)
             return response.data

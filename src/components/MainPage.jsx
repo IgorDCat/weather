@@ -7,6 +7,7 @@ import WindHumidityRain from "./WindHumidityRain";
 import {NavLink} from "react-router-dom";
 import {selectImg} from "../utils/selectImage";
 import {dateConverter} from "../utils/dateConverter";
+import Search from "./Search";
 
 
 const capitalizeFirstLetter = (string) => {
@@ -25,6 +26,7 @@ const MainPage = (props) => {
                     <div className="header__temperature_icon">
                         °C
                     </div>
+                    <Search cities={props.cities}/>
                     <div className="header__menu_icon">
                         <img src={menuIcon} alt=""/>
                     </div>

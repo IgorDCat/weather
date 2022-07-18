@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     justify-content: space-between;
     align-self: flex-start;
     padding: 25px 15px 0;
@@ -309,19 +309,20 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 15px;
     margin: 0 auto;
 }
-.week__content{
+
+.week__content {
     display: flex;
     justify-content: space-around;
 }
 
-.week__content_day, .week__content_description, .week__content_temperature{
+.week__content_day, .week__content_description, .week__content_temperature {
     margin: 17px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.week__content_description{
+.week__content_description {
     width: 200px;
 }
 
@@ -331,13 +332,72 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 5px;
 }
 
-.week__content_day{
+.week__content_day {
     font-size: 18px;
     line-height: 24px;
     width: 30px;
 }
 
-.newDay{
+.newDay {
     margin-left: 10px;
     color: #FAFD74;
+}
+
+.search {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    color: black;
+}
+
+.search__input {
+    display: inline-block;
+    width: 70%;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.search__btn {
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: gray 1px solid;
+    border-radius: 10px;
+}
+
+.search__btn:active {
+    background-color: white;
+}
+
+.search__list{
+    position: fixed;
+    top: 50px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.search__list li {
+    border: #bdbdbd 1px solid;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.search__list li:active {
+    background-color: #bdbdbd;
+}
+
+.search__list span {
+    color: gray;
 }
