@@ -29,12 +29,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-    position: relative;
     margin: 0 auto;
-    width: 375px;
+    max-width: 1000px;
     border-radius: 15px;
     background: linear-gradient(#06C7F1, #0648F1);
-    z-index: 10;
     padding-bottom: 20px;
 }
 
@@ -49,6 +47,8 @@ h1, h2, h3, h4, h5, h6 {
 .header__temperature_icon {
     font-size: 25px;
     font-weight: 700;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .header__temperature_icon img {
@@ -59,19 +59,23 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu_icon img {
     width: 30px;
     height: 30px;
+    margin-left: 10px;
 }
 
 .city {
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 21px;
     font-weight: 700;
+    margin-bottom: 100px;
+    background-color: #6b88d4;
+    padding: 10px;
 }
 
 .city img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
 }
 
@@ -96,25 +100,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main__content {
-    width: 300px;
+    width: 90%;
     margin: 0 auto 7px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px white solid;
     padding-bottom: 12px;
 }
 
 .main__content img {
-    width: 180px;
-    height: 156px;
+    width: 280px;
+    height: 280px;
 }
 
 .main__temperature {
     font-size: 100px;
     font-weight: 500;
     line-height: 117px;
+    margin: 0 50px;
 }
 
 .main__temperature span {
@@ -142,22 +146,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .main__parameters {
     display: flex;
-    justify-content: space-between;
-    font-size: 12px;
+    justify-content: space-around;
+    font-size: 16px;
     margin-bottom: 25px;
 }
 
 .main__parameters_item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 86px;
+    max-width: 250px;
     margin: 0 8px;
+    padding: 0 10px;
 }
 
 .main__parameters_item img {
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
 }
 
 .main__parameters_text {
@@ -165,28 +169,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .know_more {
-    display: flex;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 94px;
     height: 20px;
     background-color: #252020;
-    justify-content: center;
-    align-items: center;
     font-size: 12px;
-    line-height: 14;
+    line-height: 14px;
     font-weight: 700;
     border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .bottom_container {
-    position: relative;
-    top: -30px;
     margin: 0 auto;
-    width: 375px;
+    max-width: 1000px;
     background-color: #252020;
     font-size: 22px;
     line-height: 29px;
-    padding: 38px 23px 0;
+    padding: 18px 23px 0;
     border-radius: 15px;
     height: 210px;
 }
@@ -225,10 +229,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 75px;
+    width: 200px;
     height: 100px;
     border-radius: 30px;
-    background: #2352CB;
+    background: #2352cb;
     font-size: 14px;
     line-height: 19px;
     font-weight: 600;
@@ -238,14 +242,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bottom__widget:hover {
-    background: linear-gradient(#0648F1, #00D1FF);
+    background: linear-gradient(#0648F1, #00d0fd);
     height: 110px;
     top: -10px;
 }
 
 .bottom__widget img {
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
 }
 
 .week__title {
@@ -345,6 +349,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .search {
     display: flex;
+    width: 500px;
     height: 35px;
     align-items: center;
     color: black;
@@ -352,8 +357,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .search__input {
     display: inline-block;
-    width: 70%;
-    padding: 5px;
+    width: 80%;
+    padding: 5px 10px;
     font-family: inherit;
     font-size: 12px;
     font-weight: 400;
@@ -369,6 +374,7 @@ h1, h2, h3, h4, h5, h6 {
 .search__btn {
     width: 50px;
     height: 25px;
+    font-size: 12px;
     margin-left: 10px;
     cursor: pointer;
     border: gray 1px solid;
@@ -381,17 +387,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .search__list{
     position: fixed;
-    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     font-size: 12px;
     font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nonactive{
+    visibility: hidden;
 }
 
 .search__list li {
+    width: 350px;
     border: #bdbdbd 1px solid;
     margin-top: 10px;
     padding: 10px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.search__list li:nth-child(1) {
+    margin-top: 70px;
 }
 
 .search__list li:active {

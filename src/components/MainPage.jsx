@@ -8,32 +8,31 @@ import {NavLink} from "react-router-dom";
 import {selectImg} from "../utils/selectImage";
 import {dateConverter} from "../utils/dateConverter";
 import Search from "./Search";
-
+import {setUnits} from "../redux/weatherReducer";
 
 const capitalizeFirstLetter = (string) => {
-  return  string[0].toUpperCase() + string.slice(1);
+    return string[0].toUpperCase() + string.slice(1);
 }
 
-
 const MainPage = (props) => {
-
-    console.log('render')
 
     return (
         <div className="app">
             <div className="container">
                 <div className="header">
-                    <div className="header__temperature_icon">
-                        °C
+                    <div className="header__temperature_icon" onClick={() => props.dispatch(setUnits(props.units))}>
+                        °{props.units === "metric" ? "C (change)" : "F (change)"}
                     </div>
-                    <Search cities={props.cities}/>
+
+                    <Search cities={props.cities} isSearchModalActive={props.isSearchModalActive}/>
+
                     <div className="header__menu_icon">
                         <img src={menuIcon} alt=""/>
                     </div>
                 </div>
                 <div className="city">
                     <img src={pinIcon} alt=""/>
-                    <span className='city__name'>{props.nowWeather? props.nowWeather.name: "---"}</span>
+                    <span className='city__name'>{props.nowWeather ? props.nowWeather.name : "---"}</span>
 
                 </div>
                 <div className="main_loading">
@@ -41,19 +40,21 @@ const MainPage = (props) => {
                     Updating...
                 </div>
                 <div className="main__content">
-                    <img src={props.nowWeather? selectImg(props.nowWeather.weather[0].icon) : null} alt=""/>
+                    <img src={props.nowWeather ? selectImg(props.nowWeather.weather[0].icon) : null} alt=""/>
                     <div className="main__temperature">
-                        {props.nowWeather? Math.round(props.nowWeather.main.temp) : "---"}<span>°</span>
-                    </div>
-                    <div className="main__description">
-                        {props.nowWeather? capitalizeFirstLetter(props.nowWeather.weather[0].description) : "---"}
-                    </div>
-                    <div className="main__date">
+                        {props.nowWeather ? Math.round(props.nowWeather.main.temp) : "---"}<span>°</span>
+                        <div className="main__description">
+                            {props.nowWeather ? capitalizeFirstLetter(props.nowWeather.weather[0].description) : "---"}
+                        </div>
+                        <div className="main__date">
                         {props.date.toLocaleDateString()}
                     </div>
+                    </div>
+
+
                 </div>
 
-                <WindHumidityRain nowWeather={props.nowWeather} windSpeed={props.windSpeed} humidity={props.humidity} pressure={props.pressure}/>
+                <WindHumidityRain nowWeather={props.nowWeather} units={props.units}/>
 
                 <div className="know_more">
                     Know more
@@ -68,15 +69,16 @@ const MainPage = (props) => {
                 </div>
 
                 <div className="bottom__widgets">
-                    {props.hourlyWeather? props.hourlyWeather.list.map(h => props.hourlyWeather.list.indexOf(h)<4 ? <div className="bottom__widget" key={h.dt}>
-                        <div className="bottom__percent">
-                            {Math.round(h.main.temp)}°
-                        </div>
-                        <img src={selectImg(h.weather[0].icon)} alt=""/>
-                        <div className="bottom__time">
-                            {dateConverter(h.dt_txt, props.hourlyWeather.city.timezone)}
-                        </div>
-                    </div>: null):null}
+                    {props.hourlyWeather ? props.hourlyWeather.list.map(h => props.hourlyWeather.list.indexOf(h) < 4 ?
+                        <div className="bottom__widget" key={h.dt}>
+                            <div className="bottom__percent">
+                                {Math.round(h.main.temp)}°
+                            </div>
+                            <img src={selectImg(h.weather[0].icon)} alt=""/>
+                            <div className="bottom__time">
+                                {dateConverter(h.dt_txt, props.hourlyWeather.city.timezone)}
+                            </div>
+                        </div> : null) : null}
                 </div>
             </div>
         </div>
