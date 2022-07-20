@@ -32,8 +32,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     max-width: 1000px;
     border-radius: 15px;
-    background: linear-gradient(#06C7F1, #0648F1);
     padding-bottom: 20px;
+    background-image: url(../assets/ezoterika-i-planeta-zemlya.369.orig.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
 .header {
@@ -69,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 21px;
     font-weight: 700;
     margin-bottom: 100px;
-    background-color: #6b88d4;
+    background-color: rgba(107, 136, 212, 0.40);
     padding: 10px;
 }
 
@@ -117,13 +119,13 @@ h1, h2, h3, h4, h5, h6 {
 .main__temperature {
     font-size: 100px;
     font-weight: 500;
-    line-height: 117px;
+    line-height: 110px;
     margin: 0 50px;
 }
 
 .main__temperature span {
     position: absolute;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 28px;
     margin-top: 25px;
@@ -149,19 +151,20 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-around;
     font-size: 16px;
     margin-bottom: 25px;
+    background-color: rgba(0, 0, 0, 0.62);
+    padding: 10px;
 }
 
 .main__parameters_item {
     display: flex;
     align-items: center;
     max-width: 250px;
-    margin: 0 8px;
-    padding: 0 10px;
 }
 
 .main__parameters_item img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
 }
 
 .main__parameters_text {
@@ -190,15 +193,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #252020;
     font-size: 22px;
     line-height: 29px;
-    padding: 18px 23px 0;
+    padding: 20px 0;
     border-radius: 15px;
-    height: 210px;
 }
 
 .bottom__title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 22px;
+    background-color: #33363b;
+    padding: 10px;
 }
 
 .bottom__days-link {
@@ -221,6 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 .bottom__widgets {
     display: flex;
     justify-content: space-between;
+    margin: 0 10px;
 }
 
 .bottom__widget {
@@ -243,8 +249,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .bottom__widget:hover {
     background: linear-gradient(#0648F1, #00d0fd);
-    height: 110px;
-    top: -10px;
 }
 
 .bottom__widget img {
@@ -362,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: inherit;
     font-size: 12px;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 16px;
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
@@ -385,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
 }
 
-.search__list{
+.search__list {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -399,8 +403,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.nonactive{
+.nonactiveSearchModal {
     visibility: hidden;
+}
+
+.activeSearchModal {
+    overflow: hidden;
 }
 
 .search__list li {
@@ -422,4 +430,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .search__list span {
     color: gray;
+}
+
+.sunrise_sunset {
+    display: flex;
+    margin: 0 30px 10px;
+    font-size: 18px;
+}
+
+.sunrise_sunset__title {
+    margin: 0 40px;
+}
+
+.sunrise_sunset img {
+    width: 50px;
+    height: 50px;
 }

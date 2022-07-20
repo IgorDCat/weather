@@ -7,6 +7,15 @@ export const dateConverter = (data, timezone) => {
     return newDate + ":00"
 }
 
+export const timeConverter = (UNIX_timestamp, timezone) => {
+  const dtFormat = new Intl.DateTimeFormat('en-GB', {
+    timeStyle: 'short',
+    timeZone: 'UTC'
+  });
+  return dtFormat.format(new Date((UNIX_timestamp+timezone) * 1e3));
+
+}
+
 export const getNewDate = (time, timezone) => {
     let date = new Date(time);
     const timeShift = timezone / 3600;

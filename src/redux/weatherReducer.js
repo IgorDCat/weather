@@ -60,6 +60,7 @@ export const fetchHourlyWeather = (lat, lon, lang, units) => async (dispatch) =>
 export const fetchCities = (inputValue) => async (dispatch) => {
     dispatch(setSearchModal(true));
     const response = await api.getCities(inputValue, 5);
+    if(!response[0]?.country) dispatch(setSearchModal(false));
     await dispatch(setCities(response));
 }
 
