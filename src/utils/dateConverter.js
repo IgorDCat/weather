@@ -1,9 +1,10 @@
 export const dateConverter = (data, timezone) => {
     const date = new Date(data);
-    const tz = timezone / 3600;
+    const tz = Math.round(timezone / 3600);
     let newDate = Number(date.getHours()) + tz;
     if (newDate >= 24) newDate -= 24;
     if (newDate < 10) newDate = "0" + newDate;
+
     return newDate + ":00"
 }
 

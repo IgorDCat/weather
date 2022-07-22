@@ -6,6 +6,7 @@ import arrowImg from "../assets/arrow1.png"
 import sunriseIcon from "../assets/sunrise_icon.png"
 import sunsetIcon from "../assets/sunset_icon1.png"
 import eyeIcon from "../assets/eye_icon.png"
+import rainIcon from "../assets/rain_icon.png"
 import WindHumidityRain from "./WindHumidityRain";
 import {NavLink} from "react-router-dom";
 import {selectImg} from "../utils/selectImage";
@@ -50,11 +51,9 @@ const MainPage = (props) => {
                             {props.nowWeather ? capitalizeFirstLetter(props.nowWeather.weather[0].description) : "---"}
                         </div>
                         <div className="main__date">
-                        {props.date.toLocaleDateString()}
+                            {props.date.toLocaleDateString()}
+                        </div>
                     </div>
-                    </div>
-
-
                 </div>
 
                 <WindHumidityRain nowWeather={props.nowWeather} units={props.units}/>
@@ -86,6 +85,15 @@ const MainPage = (props) => {
                         <div className="sunrise_sunset__title">Visibility:</div>
                         <div>{props.nowWeather ? props.nowWeather.visibility : "---"}m</div>
                     </div>
+                    {props.nowWeather?.rain ?
+                        <div className="sunrise_sunset">
+                            <img src={rainIcon} alt=""/>
+                            <div className="sunrise_sunset__title">Rain:</div>
+                            <div>{Object.keys(props.nowWeather?.rain).map(key => {
+                                return <span key={key}>{props.nowWeather?.rain[key]}</span>
+                            })}mm/h
+                            </div>
+                        </div> : null}
                 </div>
 
                 <div className="bottom__widgets">
@@ -97,6 +105,15 @@ const MainPage = (props) => {
                             <img src={selectImg(h.weather[0].icon)} alt=""/>
                             <div className="bottom__time">
                                 {dateConverter(h.dt_txt, props.hourlyWeather.city.timezone)}
+                            </div>
+                            <div className="bottom__time">
+                                Wind: {h.wind.speed} {props.units === "metric" ? "m/s" : "mph"}
+                            </div>
+                            <div className="bottom__time">
+                                Humidity: {h.main.humidity}%
+                            </div>
+                            <div className="bottom__time">
+                                Pressure: {h.main.pressure}hPa
                             </div>
                         </div> : null) : null}
                 </div>
