@@ -14,24 +14,20 @@ const Search = (props) => {
         }
     }
 
-    const removeClass = () => {
-        document.body.classList.remove("activeSearchModal");    // for scrolling
-        return "nonactiveSearchModal"
-    }
-
     return (
         <div className="search">
             <input className="search__input" type="text" placeholder="Enter your city..." value={inputValue}
                    onChange={(e) => setInputValue(e.currentTarget.value)}/>
             <button className="search__btn" onClick={(e) => onSendInput(e, inputValue)}>search</button>
-            <div className={props.isSearchModalActive ? document.body.classList.add("activeSearchModal") : removeClass()} onClick={()=>dispatch(setSearchModal(false))}>
-            <ul className="search__list">
-                {props.cities ? props.cities.map(c => <li key={c.lat}
-                                                          onClick={() => dispatch(setCoordinates(c.lat, c.lon))}>
-                    {c.name}, <span>country:
+            <div className={props.isSearchModalActive ? null : "nonactiveSearchModal"}
+                 onClick={() => dispatch(setSearchModal(false))}>
+                <ul className="search__list">
+                    {props.cities ? props.cities.map(c => <li key={c.lat}
+                                                              onClick={() => dispatch(setCoordinates(c.lat, c.lon))}>
+                        {c.name}, <span>country:
                 </span> {c.country}, <span>state:</span> {c.state}</li>) : null}
-            </ul>
-                </div>
+                </ul>
+            </div>
         </div>
     )
 }

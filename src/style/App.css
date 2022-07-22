@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     font-weight: 300;
     line-height: 28px;
-    margin-top: 25px;
+    margin-top: 18px;
 }
 
 .main__description {
@@ -211,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     height: 20px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .bottom__days-link img {
@@ -225,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bottom__widgets {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0 10px;
 }
 
@@ -390,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .search__list {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -400,15 +400,11 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     font-size: 12px;
     font-weight: 500;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
 }
 
 .nonactiveSearchModal {
     visibility: hidden;
-}
-
-.activeSearchModal {
-    overflow: hidden;
 }
 
 .search__list li {
@@ -424,12 +420,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 70px;
 }
 
+.search__list li:hover {
+    background: cornflowerblue;
+}
+
 .search__list li:active {
     background-color: #bdbdbd;
 }
 
 .search__list span {
-    color: gray;
+    color: #33363b;
 }
 
 .sunrise_sunset {

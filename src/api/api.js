@@ -17,7 +17,7 @@ export const api = {
 
     getWeekWeather: (shir = 53.03, dolg = 158.66, lang, tempUnit="metric") => {
         return instance.get(`data/2.5/forecast?lat=${shir}&lon=${dolg}&appid=${apiId}&lang=${lang}&units=${tempUnit}`).then(response => {
-
+console.log(response.data)
             return response.data
         })
     },
